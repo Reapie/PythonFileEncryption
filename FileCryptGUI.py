@@ -21,13 +21,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(397, 227)
+        MainWindow.resize(400, 225)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setFixedSize(MainWindow.size())
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        MainWindow.setFont(font)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.btnChooseFile = QtWidgets.QPushButton(self.centralwidget)
-        self.btnChooseFile.setGeometry(QtCore.QRect(20, 20, 231, 31))
+        self.btnChooseFile.setGeometry(QtCore.QRect(20, 20, 171, 31))
         self.btnChooseFile.setObjectName("btnChooseFile")
         self.txtFilePath = QtWidgets.QTextEdit(self.centralwidget)
         self.txtFilePath.setGeometry(QtCore.QRect(20, 70, 361, 31))
@@ -46,7 +50,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnDecrypt.setGeometry(QtCore.QRect(210, 170, 171, 31))
         self.btnDecrypt.setObjectName("btnDecrypt")
         self.cbDelete = QtWidgets.QCheckBox(self.centralwidget)
-        self.cbDelete.setGeometry(QtCore.QRect(269, 20, 101, 31))
+        self.cbDelete.setGeometry(QtCore.QRect(210, 20, 171, 31))
         self.cbDelete.setObjectName("cbDelete")
         self.txtPwd = QtWidgets.QTextEdit(self.centralwidget)
         self.txtPwd.setGeometry(QtCore.QRect(20, 120, 361, 31))
@@ -150,6 +154,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
+    app.setStyle("Fusion")
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
